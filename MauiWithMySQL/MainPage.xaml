@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiWithMySQL.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label
+                Text="Hello, MySQL!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    Text="Server:"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    VerticalOptions="Center" />
+                <Entry x:Name="Server"
+                       Grid.Row="0"
+                    Grid.Column="1"
+                    Placeholder="Server"
+                    VerticalOptions="Center" />
+                <Label
+                    Text="Database:"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    VerticalOptions="Center" />
+                <Entry x:Name="Database"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       Placeholder="Database"
+                       VerticalOptions="Center" />
+                <Label
+                    Text="User:"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    VerticalOptions="Center" />
+                <Entry x:Name="User"
+                       Grid.Row="2"
+                    Grid.Column="1"
+                    Placeholder="User"
+                    VerticalOptions="Center" />
+
+                <Label
+                    Text="Password:"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    VerticalOptions="Center" />
+                <Entry x:Name="Password"
+                       Grid.Row="3"
+                    Grid.Column="1"
+                    Placeholder="Password"
+                    IsPassword="True"
+                    VerticalOptions="Center" />
+
+            </Grid>
+
+            <Button
+                x:Name="CheckConnection"
+                Text="Check connection" 
+                Clicked="CheckConnection_Clicked"
+                HorizontalOptions="Fill" />
+
+            <Button x:Name="AddData"
+                    Text="Add data"
+                    Clicked="AddData_Clicked"
+                    HorizontalOptions="Fill" />
+
+            <Button x:Name="FetchData"
+                    Text="Fetch data"
+                    Clicked="FetchData_Clicked"
+                    HorizontalOptions="Fill" />
+
+            <Editor x:Name="DataFromDb" HorizontalOptions="Fill" MinimumHeightRequest="300" />
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
